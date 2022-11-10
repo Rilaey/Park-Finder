@@ -1,3 +1,8 @@
+body {
+  margin: 0 auto;
+  padding: 0;
+}
+
 .scrollhide-nav {
     position: fixed;
     right: 0;
@@ -12,4 +17,19 @@
     -webkit-transform: translateY(-100%);
         -ms-transform: translateY(-100%);
             transform: translateY(-100%);
+  }
+
+  .side-of-map {
+    width: 25%;
+    margin-top: 4%;
+    margin-left: 2%;
+  }
+
+  .map {
+    background-color: gray;
+    width: 75%;
+  }
+
+  label {
+    font-size: 32px;
   }
