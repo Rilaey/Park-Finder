@@ -9,12 +9,6 @@
     crossorigin="anonymous">
   <link href="./assets/styles2.css" rel="stylesheet">
   <title>Park Finder</title>
-  <style>
-    #map {
-      height: 500px;
-      width: 50%;
-    }
-  </style>
 </head>
 
 <body>
@@ -24,10 +18,10 @@
         <ul class="dropdown menu" data-dropdown-menu>
           <li class="menu-text">Park Finder</li>
           <li>
-            <a href="#">One</a>
+            <a href="#">Home</a>
           </li>
-          <li><a href="#">Two</a></li>
-          <li><a href="#">Three</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Map</a></li>
         </ul>
       </div>
       <div class="top-bar-right">
@@ -38,6 +32,51 @@
       </div>
     </div>
   </nav>
+
+        <!-- search form -->
+        <section class="side-of-map">
+          <form>
+            <div class="row">
+              <div class="large-12 columns">
+                <label>Mile Radius
+                  <select>
+                    <option value="0">10 Miles</option>
+                    <option value="25">25 Miles</option>
+                    <option value="50">50 Miles</option>
+                    <option value="100">100 Miles</option>
+                  </select>
+                </label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="large-12 columns">
+                <label>Activities
+                  <select>
+                    <option value="Camping">Camping</option>
+                    <option value="Fishing">Fishing</option>
+                    <option value="Boating">Boating</option>
+                    <option value="Stargazing">Stargazing</option>
+                    <option value="Hiking">Hiking</option>
+                    <option value="Kayaking">Kayaking</option>
+                    <option value="Swimming">Swimming</option>
+                  </select>
+                </label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="large-12 columns">
+                <label>Entrance Fee
+                  <select>
+                    <option value="0$">0$</option>
+                    <option value="15$">Under 15$</option>
+                    <option value="30$">Under 30$</option>
+                    <option value="50%">Under 50$</option>
+                  </select>
+                </label>
+              </div>
+            </div>
+          </form>
+        </section>
 
   <!-- Map Container -->
   <div class="section">
