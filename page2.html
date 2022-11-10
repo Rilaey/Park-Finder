@@ -9,6 +9,12 @@
     crossorigin="anonymous">
   <link href="./assets/styles2.css" rel="stylesheet">
   <title>Park Finder</title>
+    <style>
+        #map {
+            height: 500px;
+            width: 50%;
+        }
+    </style>
 </head>
 
 <body>
@@ -33,12 +39,40 @@
     </div>
   </nav>
 
- 
-  <script src="https://code.jquery.com/jquery-3.6.1.slim.min.js"
-    integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
+      <!-- Map Container -->
+      <div class="section">
+        
+         <div class="container">
+            <h3>google map</h3>
+            <div id="map"></div>
+    
+      </div>
+
+      <!-- Scripts -->
+      <script src="https://code.jquery.com/jquery-3.6.1.slim.min.js" integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/js/foundation.min.js"
     crossorigin="anonymous"></script>
   <script src="./assets/script2.js"></script>
+
+        <!-- Google map script/API - AIzaSyAOQradlhO76Z0l-Yorgij0RUAkMC6nMjc -->
+      <script>
+        function initMap(){
+            var options = {
+                zoom:8,
+                center:{lat:44.4280,lng:-110.5885}
+            }
+            
+            var map = new google.maps.Map(document.getElementById('map'), options);
+
+            var marker = new google.maps.Marker({
+                position:{lat:44.4280,lng:-110.5885},
+                map:map
+            })
+        }
+      </script>
+      <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOQradlhO76Z0l-Yorgij0RUAkMC6nMjc&callback=initMap">
+      </script>
 </body>
 
 </html>

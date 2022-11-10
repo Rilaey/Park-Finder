@@ -1,3 +1,14 @@
+.section {
+  margin-top: 4%;
+  margin-right: 2%;
+  align-items: right;
+}
+.container {
+  padding: 20px;
+  margin: 20px;
+}
+
+
 .scrollhide-nav {
     position: fixed;
     right: 0;
