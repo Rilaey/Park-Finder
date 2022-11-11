@@ -126,7 +126,7 @@
               animation: fadeIn 1s ease-in;
     }
   }
-  footer * {
+  .suggested * {
       margin: 0px;
       padding: 0px;
       font-family: sans-serif;
@@ -134,7 +134,7 @@
       bottom: -1px;
       
   }
-  footer{
+  .suggested{
       display: flex;
       justify-content: center;
       height: 100vh;
@@ -198,3 +198,41 @@
     content-visibility: visible;
   }
   
+  /*-----Footer---*/
+
+.footer-css {
+  height: 100vh;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footer-css-body {
+  overflow: auto;
+}
+
+.footer-css .header {
+  background-color: #2c3840;
+  height: 10rem;
+  color: #fff;
+  padding: 3rem;
+}
+
+.footer-css .header .menu a {
+  color: #fff;
+}
+
+.footer-css .body-content {
+  background-color: #fff;
+}
+
+.footer-css .footer {
+  height: 10rem;
+  background-color: #2c3840;
+  color: #fff;
+  padding: 3rem;
+}
+
+.footer-css .footer .menu a {
+  color: #fff;
+}
