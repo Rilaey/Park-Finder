@@ -18,10 +18,10 @@
         <ul class="dropdown menu" data-dropdown-menu>
           <li class="menu-text">Park Finder</li>
           <li>
-            <a href="#">Home</a>
+            <a href="home.html">Home</a>
           </li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Map</a></li>
+          <li><a href="page3.html">About</a></li>
+          <li><a href="page2.html">Map</a></li>
         </ul>
       </div>
       <div class="top-bar-right">
@@ -32,9 +32,9 @@
       </div>
     </div>
   </nav>
-
+      <main class="main-body">
         <!-- search form -->
-        <section class="side-of-map">
+        <section class="section-25">
           <form>
             <div class="row">
               <div class="large-12 columns">
@@ -75,19 +75,19 @@
                 </label>
               </div>
             </div>
+            <div class="row">
+              <div class="large-12 columns btn-center">
+                <button class="sub-btn">Submit</button>
+              </div>
+            </div>
           </form>
         </section>
 
   <!-- Map Container -->
-  <div class="section">
-
-    <div class="container">
-      <h3>google map</h3>
-      <div id="map"></div>
-
-    </div>
-  </div>
-
+        <div class="section-75">
+            <div id="map"></div>
+        </div>
+      </main>  
   <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.6.1.slim.min.js"
     integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
@@ -114,6 +114,7 @@
     }
   </script>
   <script src="./assets/script2.js"></script>
+  <script src="./assets/fetchpark.js"></script>
 </body>
 
 </html>
