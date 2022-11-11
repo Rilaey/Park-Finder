@@ -126,74 +126,73 @@
               animation: fadeIn 1s ease-in;
     }
   }
-  footer * {
-      margin: 0px;
-      padding: 0px;
-      font-family: sans-serif;
-      position:relative;
-      bottom: -1px;
-      
-  }
-  footer{
-      display: flex;
-      justify-content: center;
-      height: 100vh;
-      align-items: center;
-      background: whitesmoke;
-  }
-  .container{
-      display: inline-flex;
-  }
-  .card{
-      height: 395px;
-      margin: 100px; 
-      width: 375px;
-      box-shadow: 5px 5px 20px black;
-      overflow:hidden;
-      background-color: #8C786C;
-  }
-  img{
-    height: 50;
-    width: -340px;
-      border-radius: 3px;
-      object-fit: fill;
-  
-  }
-  .intro {
-      height: 300px;
-      width:400px;
-      padding: 5px;
-      box-sizing:border-box;
-      position:absolute;
-      bottom: -170px;
-      background: rgb(27, 27, 27, .5);
-      color: white;
-      transition: .5s;
-  
-  }
-  h1{
-      margin: -55px;
-      padding: 55px;
-      font-size: 40px;
-  }
-  p{
-      font-size:20px;
-      margin: 10px;
-      opacity: 0;
-  }
-  span{
-      font-weight: bold;
-  }
-  .card:hover{
-      cursor: pointer;
-  }
-  .card:hover .intro {
-    height:220px;
-    bottom: 240px;
-    background: black;
-  }
-  .card:hover p{
-    opacity: 0.8;
-    content-visibility: visible;
-  }
-  
+footer * {
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+    position:relative;
+    bottom: -1px;
+    
+}
+footer{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    background: whitesmoke;
+}
+.container{
+    display: inline-flex;
+}
+.card{
+    height: 395px;
+    margin: 100px; 
+    width: 375px;
+    box-shadow: 5px 5px 20px black;
+    overflow:hidden;
+    background-color: #8C786C;
+}
+img{
+  height: 50;
+  width: -340px;
+    border-radius: 3px;
+    object-fit: fill;
+
+}
+.intro {
+    height: 300px;
+    width:400px;
+    padding: 5px;
+    box-sizing:border-box;
+    position:absolute;
+    bottom: -170px;
+    background: rgb(27, 27, 27, .5);
+    color: white;
+    transition: .5s;
+
+}
+h1{
+    margin: -55px;
+    padding: 55px;
+    font-size: 40px;
+}
+p{
+    font-size:20px;
+    margin: 10px;
+    opacity: 0;
+}
+span{
+    font-weight: bold;
+}
+.card:hover{
+    cursor: pointer;
+}
+.card:hover .intro {
+  height:220px;
+  bottom: 240px;
+  background: black;
+}
+.card:hover p{
+  opacity: 0.8;
+  content-visibility: visible;
+}
