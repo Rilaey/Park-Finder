@@ -151,6 +151,7 @@
   <!-- Google map script/API - AIzaSyAOQradlhO76Z0l-Yorgij0RUAkMC6nMjc -->
   <script>
     function initMap() {
+
       var options = {
         zoom: 8,
         center: { lat: 44.4280, lng: -110.5885 }
@@ -158,10 +159,21 @@
 
       var map = new google.maps.Map(document.getElementById('map'), options);
 
-      var marker = new google.maps.Marker({
-        position: { lat: 44.4280, lng: -110.5885 },
-        map: map
-      })
+      // Get the current position using google maps geolocation api
+      navigator.geolocation.getCurrentPosition(function (position) {
+        // Set the position coordinates
+        const pos = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude,
+        };
+
+        // Center the map on the new coordinates
+        map.setCenter(pos);
+
+        // Put a marker on the current location
+        var marker = new google.maps.Marker({ position: pos, map: map});
+      });
+
     }
 </script>
 
