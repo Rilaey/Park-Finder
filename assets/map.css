@@ -41,6 +41,7 @@ body {
 #map {
   height: 500px;
   width: 70%;
+  border-radius: 4%;
 }
 
 .scrollhide-nav {
