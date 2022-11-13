@@ -1,79 +1,147 @@
 // api key stored in a variable
 const apiKey = 'rvX9bJoyPEXTv5dRShhVJwdVf4vkUjRX1Odiws42';
 
-// varibles for milage radius
-let tenMiles = document.getElementById('10-miles');
-let twentyFiveMiles = document.getElementById('25-miles');
-let fiftyMiles = document.getElementById('50-miles');
-let hundredMiles = document.getElementById('100-miles');
+// State variables
+const states = [
+    { name: 'Alabama', code: 'AL' },
+    { name: 'Alaska', code: 'AK' },
+    { name: 'Arizona', code: 'AZ' },
+    { name: 'Arkansas', code: 'AR' },
+    { name: 'California', code: 'CA' },
+    { name: 'Colorado', code: 'CO' },
+    { name: 'Connecticut', code: 'CT' },
+    { name: 'Delaware', code: 'DE' },
+    { name: 'Florida', code: 'FL' },
+    { name: 'Georgia', code: 'GA' },
+    { name: 'Hawaii', code: 'HI' },
+    { name: 'Idaho', code: 'ID' },
+    { name: 'Illinois', code: 'IL' },
+    { name: 'Indiana', code: 'IN' },
+    { name: 'Iowa', code: 'IA' },
+    { name: 'Kansas', code: 'KS' },
+    { name: 'Kentucky', code: 'KY' },
+    { name: 'Louisiana', code: 'LA' },
+    { name: 'Maine', code: 'ME' },
+    { name: 'Maryland', code: 'MD' },
+    { name: 'Massachusetts', code: 'MA' },
+    { name: 'Michigan', code: 'MI' },
+    { name: 'Minnesota', code: 'MN' },
+    { name: 'Mississippi', code: 'MS' },
+    { name: 'Missouri', code: 'MO' },
+    { name: 'Montana', code: 'MT' },
+    { name: 'Nebraska', code: 'NE' },
+    { name: 'Nevada', code: 'NV' },
+    { name: 'New Hampshire', code: 'NH' },
+    { name: 'New Jersey', code: 'NJ' },
+    { name: 'New Mexico', code: 'NM' },
+    { name: 'New York', code: 'NY' },
+    { name: 'North Carolina', code: 'NC' },
+    { name: 'North Dakota', code: 'ND' },
+    { name: 'Ohio', code: 'OH' },
+    { name: 'Oklahoma', code: 'OK' },
+    { name: 'Oregon', code: 'OR' },
+    { name: 'Pennsylvania', code: 'PA' },
+    { name: 'Rhode Island', code: 'RI' },
+    { name: 'South Carolina', code: 'SC' },
+    { name: 'South Dakota', code: 'SD' },
+    { name: 'Tennessee', code: 'TN' },
+    { name: 'Texas', code: 'TX' },
+    { name: 'Utah', code: 'UT' },
+    { name: 'Vermont', code: 'VT' },
+    { name: 'Virginia', code: 'VA' },
+    { name: 'Washington', code: 'WA' },
+    { name: 'West Virginia', code: 'WV' },
+    { name: 'Wisconsin', code: 'WI' },
+    { name: 'Wyoming', code: 'WY' },
+];
 
-// variables for activities
-let camping = document.getElementById('camping');
-let fishing = document.getElementById('fishing');
-let boating = document.getElementById('boating');
-let starGazing = document.getElementById('stargazing');
-let hiking = document.getElementById('hiking');
-let kayaking = document.getElementById('kayaking');
-let swimming = document.getElementById('swimming');
+// Add the default option for states
+$('#stateList').append('<option value="">Any State</option>');
+// For each state, add an option with the value being its code
+for (let i = 0; i < states.length; i++) {
+    $('#stateList').append('<option value="' + states[i].code + '">' + states[i].name + '</option>');
+}
 
-// variables for enttrance fee
-let zeroDollars = document.getElementById('zero-dollars');
-let fifteenDollars = document.getElementById('fifteen-dollars');
-let thirtyDollars = document.getElementById('thirty-dollars');
-let fiftyDollars = document.getElementById('fifty-dollars');
+// Activity variables
+const activities = [
+    { name: 'Camping', value: 'camping' },
+    { name: 'Fishing', value: 'fishing' },
+    { name: 'Boating', value: 'boating' },
+    { name: 'Stargazing', value: 'stargazing' },
+    { name: 'Hiking', value: 'hiking' },
+    { name: 'Kayaking', value: 'kayaking' },
+    { name: 'Swimming', value: 'swimming' },
+];
 
-fetch('https://developer.nps.gov/api/v1/parks?parkCode=acad&api_key=' + apiKey)
-    .then(function(resposne) {
-        return resposne.json()
-    })
-    .then(function(data) {
-        console.log(data)
-        // if statements for milage radius
-        if(tenMiles) {
-            
-        }
-        if(twentyFiveMiles) {
 
-        }
-        if(fiftyMiles) {
+// Add the default option for activities
+$('#activitiesList').append('<option value="">Any Activity</option>');
+// For each activity, add an option with the value being its value
+for (let i = 0; i < activities.length; i++) {
+    $('#activitiesList').append('<option value="' + activities[i].value + '">' + activities[i].name + '</option>');
+}
 
-        }
-        if(hundredMiles) {
+$('#parkSearchForm').submit(function(event) {
+    // Do not refresh browser on submit
+    event.preventDefault();
 
-        }
-        // if statements for activities
-        if(camping) {
-            
-        }
-        if(fishing) {
+    // Get the value from the State and Activity dropdowns
+    let stateCode = $('#stateList').val();
+    let selectedActivity = $('#activitiesList').val();
 
-        }
-        if(boating) {
+    // Building the URL to get national parks with the dropdown filters
+    let npsUrl = 'https://developer.nps.gov/api/v1/parks?limit=500&api_key=' + apiKey;
+    // If a state is specified, add it to the URL
+    if (stateCode !== '') {
+        npsUrl = npsUrl + '&stateCode=' + stateCode;
+    }
+    // If an activity is specified, add it to the URL
+    if (selectedActivity !== '') {
+        npsUrl = npsUrl + '&q=' + selectedActivity;
+    }
 
-        }
-        if(starGazing) {
+    // Fetch the data from NPS API
+    console.log(npsUrl);
+    fetch(npsUrl).then(function(response) {
+        return response.json();
+    }).then(function(response) {
+        console.log(response);
+        // Choose a random number less than the length of the results
+        let random = Math.floor(Math.random() * response.data.length);
+        let randomPark = response.data[random];
+        console.log(randomPark);
 
-        }
-        if(hiking) {
+        // Set the park title, image, and description and show the result in the card
+        $('#parkTitle').text(randomPark.fullName);
+        $('#parkImage').attr('src', randomPark.images[0].url);
+        $('#parkDescription').text(randomPark.description);
+        // Show the search results container
+        $('.search-results-container').removeClass('invisible');
 
-        }
-        if(kayaking) {
+        const options = {
+            zoom: 8,
+            center: { lat: Number(randomPark.latitude), lng: Number(randomPark.longitude) }
+        };
+        let map = new google.maps.Map(document.getElementById('map'), options);
+        new google.maps.Marker({
+            position: { lat: Number(randomPark.latitude), lng: Number(randomPark.longitude) },
+            map: map,
+            title: randomPark.fullName
+        });
+    });
+});
 
-        }
-        if(swimming) {
+function initMap() {
+    var options = {
+      zoom: 8,
+      center: { lat: 44.4280, lng: -110.5885 }
+    }
 
-        }
-        // if statements for entrance fees
-        if(zeroDollars) {
-            
-        }
-        if(fifteenDollars) {
+    var map = new google.maps.Map(document.getElementById('map'), options);
 
-        }
-        if(thirtyDollars) {
-
-        }
-        if(fiftyDollars) {
-
-        }
-    })
+    new google.maps.Marker({
+      position: { lat: 44.4280, lng: -110.5885 },
+      map: map,
+      title: 'Yellowstone National Park'
+    });
+}

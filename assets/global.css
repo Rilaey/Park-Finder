@@ -1,4 +1,5 @@
 
+
 .topbar-responsive {
     background: #2c3840;
     padding: 1rem 1.5rem;
@@ -202,7 +203,6 @@
   /*-----Footer---*/
 
 .footer-css {
-  height: 100vh;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;

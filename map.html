@@ -35,15 +35,11 @@
   <main class="main-body">
     <!-- search form -->
     <section class="section-25">
-      <form>
+      <form id="parkSearchForm">
         <div class="row">
           <div class="large-12 columns">
-            <label>Mile Radius
-              <select>
-                <option value="0">10 Miles</option>
-                <option value="25">25 Miles</option>
-                <option value="50">50 Miles</option>
-                <option value="100">100 Miles</option>
+            <label>State
+              <select id="stateList">
               </select>
             </label>
           </div>
@@ -51,26 +47,7 @@
         <div class="row">
           <div class="large-12 columns">
             <label>Activities
-              <select>
-                <option value="Camping">Camping</option>
-                <option value="Fishing">Fishing</option>
-                <option value="Boating">Boating</option>
-                <option value="Stargazing">Stargazing</option>
-                <option value="Hiking">Hiking</option>
-                <option value="Kayaking">Kayaking</option>
-                <option value="Swimming">Swimming</option>
-              </select>
-            </label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="large-12 columns">
-            <label>Entrance Fee
-              <select>
-                <option value="0$">0$</option>
-                <option value="15$">Under 15$</option>
-                <option value="30$">Under 30$</option>
-                <option value="50%">Under 50$</option>
+              <select id="activitiesList">
               </select>
             </label>
           </div>
@@ -92,7 +69,19 @@
 
   <!-- search result containers -->
   <section>
-    <div class="search-results-container">
+    <div class="search-results-container invisible">
+      <div class="card cards">
+        <div class="card-divider card-head">
+          <h4 class="card-header card-text" id="parkTitle"></h4>
+        </div>
+        <div class="card-head">
+          <img class="search-result-img" src="" id="parkImage">
+        </div>
+        <div class="card-section card-head">
+          <p class="card-text" id="parkDescription"></p>
+        </div>
+      </div>
+<!-- 
       <div class="card cards">
         <div class="card-divider card-head">
           <h4 class="card-header card-text">I'm featured</h4>
@@ -115,19 +104,7 @@
         <div class="card-section card-head">
           <p class="card-text">This card makes use of the card-divider element.</p>
         </div>
-      </div>
-
-      <div class="card cards">
-        <div class="card-divider card-head">
-          <h4 class="card-header card-text">I'm featured</h4>
-        </div>
-        <div class="card-head">
-          <img class="search-result-img" src="./assets/images/test-park-img.jpeg">
-        </div>
-        <div class="card-section card-head">
-          <p class="card-text">This card makes use of the card-divider element.</p>
-        </div>
-      </div>
+      </div> -->
     </div>
   </section>
 
@@ -153,35 +130,6 @@
   <script async
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOQradlhO76Z0l-Yorgij0RUAkMC6nMjc&callback=initMap">
     </script>
-  <!-- Google map script/API - AIzaSyAOQradlhO76Z0l-Yorgij0RUAkMC6nMjc -->
-  <script>
-    function initMap() {
-
-      var options = {
-        zoom: 8,
-        center: { lat: 44.4280, lng: -110.5885 }
-      }
-
-      var map = new google.maps.Map(document.getElementById('map'), options);
-
-      // Get the current position using google maps geolocation api
-      navigator.geolocation.getCurrentPosition(function (position) {
-        // Set the position coordinates
-        const pos = {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude,
-        };
-
-        // Center the map on the new coordinates
-        map.setCenter(pos);
-
-        // Put a marker on the current location
-        var marker = new google.maps.Marker({ position: pos, map: map });
-      });
-
-    }
-  </script>
-  <script src="./assets/script2.js"></script>
   <script src="./assets/fetchpark.js"></script>
 </body>
 
