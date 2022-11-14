@@ -1,3 +1,4 @@
+//NavBar functionality
 var prev = 0;
 var $window = $(window);
 var nav = $('.scrollhide-nav');
