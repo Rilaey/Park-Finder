@@ -36,6 +36,7 @@ body {
 .sub-btn {
   color: #4F7302;
   font-size: 32px;
+  cursor: pointer;
 }
 
 #map {
@@ -129,4 +130,23 @@ body {
   justify-content: space-around;
   flex-wrap: wrap;
   width: 100%;
+}
+
+a, .search-btn {
+  background-color: #e6e6e6;
+  color: var(--light-green);
+  cursor: pointer;
+}
+
+a:hover, .sub-btn:hover{
+  color: var(--light-brown);
+}
+
+.menu-text {
+  font-size: 32px;
+}
+
+li, .search-btn {
+  font-size: 22px;
+  padding-top: 5px;
 }
