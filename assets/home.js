@@ -10,15 +10,31 @@ $(document).ready(function() {
     }).then(function (response) {
         console.log(response);
         // Choose a random number less than the length of the results
-        let random = Math.floor(Math.random() * response.data.length);
-        let randomPark = response.data[random];
+        var random = Math.floor(Math.random() * response.data.length);
+        var randomPark = response.data[random];
         console.log(randomPark);
 
-        // Set the park title, image, and description and show the result in the card
+        // Set the featured park title, image, and description and show the result in the card
         $('#featured1').text(randomPark.fullName);
         $('#img1').attr('src', randomPark.images[0].url);
         $('#description1').text(randomPark.description);
 
+        var random = Math.floor(Math.random() * response.data.length);
+        var randomPark = response.data[random];
+        console.log(randomPark);
 
+        // Set the featured park title, image, and description and show the result in the card
+        $('#featured2').text(randomPark.fullName);
+        $('#img2').attr('src', randomPark.images[0].url);
+        $('#description2').text(randomPark.description);
+
+        var random = Math.floor(Math.random() * response.data.length);
+        var randomPark = response.data[random];
+        console.log(randomPark);
+
+        // Set the featured park title, image, and description and show the result in the card
+        $('#featured3').text(randomPark.fullName);
+        $('#img3').attr('src', randomPark.images[0].url);
+        $('#description3').text(randomPark.description);
     });
 })
