@@ -57,7 +57,7 @@ const states = [
 
 // Add the default option for states
 $('#stateList').append('<option value="">Any State</option>');
-// For each state, add an option with the value being its code
+// For each state, add an option with the value being its code from API
 for (let i = 0; i < states.length; i++) {
     $('#stateList').append('<option value="' + states[i].code + '">' + states[i].name + '</option>');
 }
@@ -81,7 +81,7 @@ for (let i = 0; i < activities.length; i++) {
     $('#activitiesList').append('<option value="' + activities[i].value + '">' + activities[i].name + '</option>');
 }
 
-$('#parkSearchForm').submit(function(event) {
+$('#parkSearchForm').submit(function (event) {
     // Do not refresh browser on submit
     event.preventDefault();
 
@@ -102,9 +102,9 @@ $('#parkSearchForm').submit(function(event) {
 
     // Fetch the data from NPS API
     console.log(npsUrl);
-    fetch(npsUrl).then(function(response) {
+    fetch(npsUrl).then(function (response) {
         return response.json();
-    }).then(function(response) {
+    }).then(function (response) {
         console.log(response);
         // Choose a random number less than the length of the results
         let random = Math.floor(Math.random() * response.data.length);
@@ -118,30 +118,33 @@ $('#parkSearchForm').submit(function(event) {
         // Show the search results container
         $('.search-results-container').removeClass('invisible');
 
+        // Default options for map loading random park location
         const options = {
             zoom: 8,
             center: { lat: Number(randomPark.latitude), lng: Number(randomPark.longitude) }
         };
+        //Map shows location of randomonly generated park and places marker 
         let map = new google.maps.Map(document.getElementById('map'), options);
         new google.maps.Marker({
             position: { lat: Number(randomPark.latitude), lng: Number(randomPark.longitude) },
             map: map,
-            title: randomPark.fullName
+            title: randomPark.fullName //Marker shows fullname of park on hover over marker
         });
     });
 });
 
+// Sets yellowstone location as default when page loads
 function initMap() {
     var options = {
-      zoom: 8,
-      center: { lat: 44.4280, lng: -110.5885 }
+        zoom: 8,
+        center: { lat: 44.4280, lng: -110.5885 }
     }
 
     var map = new google.maps.Map(document.getElementById('map'), options);
 
     new google.maps.Marker({
-      position: { lat: 44.4280, lng: -110.5885 },
-      map: map,
-      title: 'Yellowstone National Park'
+        position: { lat: 44.4280, lng: -110.5885 },
+        map: map,
+        title: 'Yellowstone National Park' //Marker shows Yellowstone park name on hover
     });
 }
