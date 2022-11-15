@@ -112,6 +112,7 @@ $('#parkSearchForm').submit(function (event) {
         console.log(randomPark);
 
         // Set the park title, image, and description and show the result in the card
+    
         $('#parkTitle').text(randomPark.fullName);
         $('#parkImage').attr('src', randomPark.images[0].url);
         $('#parkDescription').text(randomPark.description);
@@ -121,7 +122,7 @@ $('#parkSearchForm').submit(function (event) {
         // save button functions with local storage
 
         let saveButtonEl = document.getElementById('save-btn');
-
+        
         // empty array for fav parks to be pushed to
 
         let favParksArr = [];

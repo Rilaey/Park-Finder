@@ -1,0 +1,29 @@
+
+/*----Nav Bar Styles---*/
+a, .search-btn {
+    background-color: #e6e6e6;
+    color: var(--light-green);
+    cursor: pointer;
+  }
+  
+  a:hover, .sub-btn:hover{
+    color: var(--light-brown);
+  }
+  
+  .menu-text {
+    font-size: 32px;
+  }
+  
+  li, .search-btn {
+    font-size: 22px;
+    padding-top: 5px;
+  }
+
+  .grid-container .cell {
+    border-right: solid 1px;
+    padding: 8px;
+  }
+
+  .grid-container .cell:last-child {
+    border-right: 0px;
+  }
