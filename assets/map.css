@@ -101,7 +101,7 @@ a, .search-btn {
   cursor: pointer;
 }
 
-a:hover, .sub-btn:hover{
+a:hover:hover, .sub-btn:hover{
   color: var(--light-brown);
 }
 
@@ -112,4 +112,24 @@ a:hover, .sub-btn:hover{
 li, .search-btn {
   font-size: 22px;
   padding-top: 5px;
+}
+
+#save-btn {
+  background-color: var(--light-green);
+  color: #fff;
+  font-size: 24px;
+  height: 50px;
+  border-radius: 2%;
+}
+
+#save-btn:hover {
+  background-color: var(--light-brown);
+  cursor: pointer;
+  border: 2px solid var(--light-green);
+}
+
+#save-title {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
