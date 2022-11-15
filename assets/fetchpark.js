@@ -112,12 +112,13 @@ $('#parkSearchForm').submit(function (event) {
         console.log(randomPark);
 
         // Set the park title, image, and description and show the result in the card
+    
         $('#parkTitle').text(randomPark.fullName);
         $('#parkImage').attr('src', randomPark.images[0].url);
         $('#parkDescription').text(randomPark.description);
         // Show the search results container
         $('.search-results-container').removeClass('invisible');
-
+        
         // Default options for map loading random park location
         const options = {
             zoom: 8,
