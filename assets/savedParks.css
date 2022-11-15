@@ -1,9 +1,13 @@
 
 /*----Nav Bar Styles---*/
 a, .search-btn {
-    background-color: #e6e6e6;
+    color: #e6e6e6;
     color: var(--light-green);
     cursor: pointer;
+  }
+  .search-btn {
+    color: var(--light-green);
+    background-color: #e6e6e6;
   }
   
   a:hover, .sub-btn:hover{
