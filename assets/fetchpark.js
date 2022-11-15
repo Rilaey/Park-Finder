@@ -105,7 +105,7 @@ $('#parkSearchForm').submit(function (event) {
     fetch(npsUrl).then(function (response) {
         return response.json();
     }).then(function (response) {
-        console.log(response);
+        //console.log(response);
         // Choose a random number less than the length of the results
         let random = Math.floor(Math.random() * response.data.length);
         let randomPark = response.data[random];
@@ -117,6 +117,37 @@ $('#parkSearchForm').submit(function (event) {
         $('#parkDescription').text(randomPark.description);
         // Show the search results container
         $('.search-results-container').removeClass('invisible');
+
+        // save button functions with local storage
+
+        let saveButtonEl = document.getElementById('save-btn');
+
+        // empty array for fav parks to be pushed to
+
+        let favParksArr = [];
+
+        saveButtonEl.addEventListener('click', function(event) {
+            event.preventDefault();
+                savedPark1 = {
+                    parkTitle: randomPark.fullName , 
+                    parkImage: randomPark.images[0].url , 
+                    parkDescription: randomPark.description , 
+                    parkUrl: randomPark.url ,
+                    parkWeather: randomPark.weatherInfo
+                }  
+                // use json to stringify the object so its readable in local storage
+                let stringedSavedPark1 = JSON.stringify(savedPark1)
+
+                localStorage.setItem("savedPark1", stringedSavedPark1);
+
+                // use json to parse the object so its convereted back into an object and
+                // not a string
+
+                let parsedSavedPark1 = JSON.parse(localStorage.getItem("savedPark1"))
+
+                console.log(parsedSavedPark1)
+
+        }) 
 
         // Default options for map loading random park location
         const options = {
@@ -147,4 +178,4 @@ function initMap() {
         map: map,
         title: 'Yellowstone National Park' //Marker shows Yellowstone park name on hover
     });
-}
+}     
