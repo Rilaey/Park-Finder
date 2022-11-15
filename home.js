@@ -13,15 +13,19 @@ $(document).ready(function() {
         var random = Math.floor(Math.random() * response.data.length);
         var randomPark = response.data[random];
         console.log(randomPark);
+        console.log(randomPark.parkCode);
 
         // Set the featured park title, image, and description and show the result in the card
         $('#featured1').text(randomPark.fullName);
         $('#img1').attr('src', randomPark.images[0].url);
         $('#description1').text(randomPark.description);
+        $('#parkCode1').text(randomPark.parkCode);
 
         var random = Math.floor(Math.random() * response.data.length);
         var randomPark = response.data[random];
         console.log(randomPark);
+
+        globalThis.featured2 = randomPark;
 
         // Set the featured park title, image, and description and show the result in the card
         $('#featured2').text(randomPark.fullName);
@@ -31,6 +35,8 @@ $(document).ready(function() {
         var random = Math.floor(Math.random() * response.data.length);
         var randomPark = response.data[random];
         console.log(randomPark);
+
+        globalThis.featured3 = randomPark;
 
         // Set the featured park title, image, and description and show the result in the card
         $('#featured3').text(randomPark.fullName);
