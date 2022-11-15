@@ -124,6 +124,9 @@ body {
 .footer-css .footer .menu a {
   color: #fff;
 }
+a:hover, .footer-css .menu a:hover {
+  color: var(--light-brown);
+}
 
 .search-results-container {
   display: flex;
@@ -133,11 +136,15 @@ body {
 }
 
 a, .search-btn {
-  background-color: #e6e6e6;
-  color: var(--light-green);
+  color: #2C4001;
   cursor: pointer;
 }
-
+.search-btn {
+  background-color: white;
+}
+a:hover, .search-btn:hover{
+  color: var(--light-brown);
+}
 a:hover, .sub-btn:hover{
   color: var(--light-brown);
 }
