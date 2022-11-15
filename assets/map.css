@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --main-bg-color: #0D0D0D;
   --light-green: #4F7302;
   --mid-green: #2C4001;
@@ -8,7 +8,7 @@
 
 body {
   background-color: #0D0D0D;
-}
+} */
 
 .main-body {
   display: flex;
@@ -135,6 +135,7 @@ a:hover, .footer-css .menu a:hover {
   width: 100%;
 }
 
+/*----Nav Bar Styles---*/
 a, .search-btn {
   color: #2C4001;
   cursor: pointer;

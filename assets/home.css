@@ -5,6 +5,11 @@
 
 /*------featured parks------*/
 
+.cardFeatured {
+    padding: 5px;
+    margin: 5px;
+}
+
 .suggested * {
     margin: 0px;
     padding: 0px;
