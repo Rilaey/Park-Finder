@@ -18,3 +18,12 @@ a, .search-btn {
     font-size: 22px;
     padding-top: 5px;
   }
+
+  .grid-container .cell {
+    border-right: solid 1px;
+    padding: 8px;
+  }
+
+  .grid-container .cell:last-child {
+    border-right: 0px;
+  }
