@@ -81,6 +81,8 @@ for (let i = 0; i < activities.length; i++) {
     $('#activitiesList').append('<option value="' + activities[i].value + '">' + activities[i].name + '</option>');
 }
 
+// Declare the randomPark variable so that we can use this throughout the whole file MMMMM
+let randomPark;
 $('#parkSearchForm').submit(function (event) {
     // Do not refresh browser on submit
     event.preventDefault();
@@ -108,7 +110,7 @@ $('#parkSearchForm').submit(function (event) {
         //console.log(response);
         // Choose a random number less than the length of the results
         let random = Math.floor(Math.random() * response.data.length);
-        let randomPark = response.data[random];
+        randomPark = response.data[random];
         console.log(randomPark);
 
         // Set the park title, image, and description and show the result in the card
@@ -121,45 +123,10 @@ $('#parkSearchForm').submit(function (event) {
 
         // save button functions with local storage
 
-        let saveButtonEl = document.getElementById('save-btn');
         
-        // empty array for fav parks to be pushed to
+        // empty array for fav parks to be pushed to
 
         let favParksArr = [];
-
-        saveButtonEl.addEventListener('click', function(event) {
-            event.preventDefault();
-            if(saveButtonEl == 'click') {
-                favParksArr.push ({
-                    parkTitle: randomPark.fullName , 
-                    parkImage: randomPark.images[0].url , 
-                    parkDescription: randomPark.description , 
-                    parkUrl: randomPark.url ,
-                    parkWeather: randomPark.weatherInfo
-                })  
-            }
-                //use json to stringify the object so its readable in local storage
-                // let stringedSavedPark1 = JSON.stringify(savedPark1)
-
-                // localStorage.setItem("savedPark1", stringedSavedPark1);
-
-
-                // // use json to parse the object so its convereted back into an object and
-                // // not a string
-
-                // let parsedSavedPark1 = JSON.parse(localStorage.getItem("savedPark1"))
-                
-                
-
-                console.log(favParksArr)
-
-                let savedTitle1 = $('#saved-name-one');
-                let savedImg1 = $('#saved-img-one');
-                let savedDesc1 = $('#saved-desc-one');
-                let savedLink1 = $('#saved-link-one');
-                let savedWeather1 = $('#saved-weather-one');
-
-        }) 
 
         // Default options for map loading random park location
         const options = {
@@ -176,6 +143,48 @@ $('#parkSearchForm').submit(function (event) {
     });
 });
 
+// Getting the item from local storage and parsing it
+let savedParkList = JSON.parse(localStorage.getItem("savedPark1"));
+
+savedParkList.forEach(park => {
+    console.log(park);
+});
+
+let saveButtonEl = document.getElementById('save-btn');
+saveButtonEl.addEventListener('click', function(event) {
+    console.log('I was clicked!')
+    event.preventDefault();
+        let savedPark1 = {
+            parkTitle: randomPark.fullName , 
+            parkImage: randomPark.images[0].url , 
+            parkDescription: randomPark.description , 
+            parkUrl: randomPark.url ,
+            parkWeather: randomPark.weatherInfo,
+        }  
+
+        // Getting the item from local storage and parsing it
+        let savedParkList = JSON.parse(localStorage.getItem("savedPark1"));
+
+        savedParkList.forEach(park => {
+            console.log(park);
+        });
+        let secondPark = savedParkList[1];
+        console.log(`Second Park is ${JSON.stringify(secondPark)}`)
+        console.log(savedParkList);
+        // If there is nothing in localStorage then set to empty array
+        if (!savedParkList) {
+            savedParkList = [];
+        }
+        // Append the current park to the list of saved parks
+        savedParkList.push(savedPark1);
+        console.log(savedParkList);
+        // use json to stringify the object so its readable in local storage
+        let stringedSavedPark1 = JSON.stringify(savedParkList);
+
+        localStorage.setItem("savedPark1", stringedSavedPark1);
+
+}) 
+
 // Sets yellowstone location as default when page loads
 function initMap() {
     var options = {
@@ -190,4 +199,4 @@ function initMap() {
         map: map,
         title: 'Yellowstone National Park' //Marker shows Yellowstone park name on hover
     });
-}     
+}  
