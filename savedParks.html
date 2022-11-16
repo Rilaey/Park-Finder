@@ -32,22 +32,23 @@
               <li><button type="button" class="button search-btn">Search</button></li>
             </ul>
           </div>
+    </nav>    
 
   <!--Saved Container-->
   <div class="grid-container">
-    <div class="card">
+    <div class="card saved-cell">
       <div class="grid-x">
         <div class="cell small-4 medium-2">
-          <h4 class="text-center">Park Name</h4>
-          <img src="./assets/images/test-park-img.jpeg">
+          <h4 class="text-center" id="saved-name-one">Park Name</h4>
+          <img src="./assets/images/test-park-img.jpeg" id="saved-img-one">
 
         </div>
         <div class="cell small-4 medium-8">
-          <p>Park Description</p>
-          <p>Park Link</p>
+          <p id="saved-desc-one">Park Description</p>
+          <p id="saved-link-one">Park Link</p>
         </div>
         <div class="cell small-4 medium-2">
-          <p>Weather</p>
+          <p id="saved-weather-one">Weather</p>
         </div>
       </div>
     </div>
@@ -75,6 +76,7 @@
     crossorigin="anonymous"></script>
   <script src="./assets/global.js"></script>
   <script src="./assets/savedParks.js"></script>
+  <script src="./assets/fetchpark.js"></script>
 </body>
 
 </html>
