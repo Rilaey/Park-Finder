@@ -129,24 +129,35 @@ $('#parkSearchForm').submit(function (event) {
 
         saveButtonEl.addEventListener('click', function(event) {
             event.preventDefault();
-                savedPark1 = {
+            if(saveButtonEl == 'click') {
+                favParksArr.push ({
                     parkTitle: randomPark.fullName , 
                     parkImage: randomPark.images[0].url , 
                     parkDescription: randomPark.description , 
                     parkUrl: randomPark.url ,
                     parkWeather: randomPark.weatherInfo
-                }  
-                // use json to stringify the object so its readable in local storage
-                let stringedSavedPark1 = JSON.stringify(savedPark1)
+                })  
+            }
+                //use json to stringify the object so its readable in local storage
+                // let stringedSavedPark1 = JSON.stringify(savedPark1)
 
-                localStorage.setItem("savedPark1", stringedSavedPark1);
+                // localStorage.setItem("savedPark1", stringedSavedPark1);
 
-                // use json to parse the object so its convereted back into an object and
-                // not a string
 
-                let parsedSavedPark1 = JSON.parse(localStorage.getItem("savedPark1"))
+                // // use json to parse the object so its convereted back into an object and
+                // // not a string
 
-                console.log(parsedSavedPark1)
+                // let parsedSavedPark1 = JSON.parse(localStorage.getItem("savedPark1"))
+                
+                
+
+                console.log(favParksArr)
+
+                let savedTitle1 = $('#saved-name-one');
+                let savedImg1 = $('#saved-img-one');
+                let savedDesc1 = $('#saved-desc-one');
+                let savedLink1 = $('#saved-link-one');
+                let savedWeather1 = $('#saved-weather-one');
 
         }) 
 

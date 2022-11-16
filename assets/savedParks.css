@@ -27,3 +27,8 @@ a, .search-btn {
   .grid-container .cell:last-child {
     border-right: 0px;
   }
+
+  /* saved card */
+  .saved-cell {
+    margin: 10px 0;
+  }
