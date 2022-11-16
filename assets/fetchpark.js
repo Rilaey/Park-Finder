@@ -146,10 +146,6 @@ $('#parkSearchForm').submit(function (event) {
 // // Getting the item from local storage and parsing it
 // let savedParkList = JSON.parse(localStorage.getItem("savedPark1"));
 
-// savedParkList.forEach(park => {
-//     console.log(park);
-// });
-
 let saveButtonEl = document.getElementById('save-btn');
 saveButtonEl.addEventListener('click', function(event) {
     console.log('I was clicked!')
@@ -165,12 +161,6 @@ saveButtonEl.addEventListener('click', function(event) {
         // Getting the item from local storage and parsing it
         let savedParkList = JSON.parse(localStorage.getItem("savedPark1"));
 
-        // savedParkList.forEach(park => {
-        //     console.log(park);
-        // });
-        // let secondPark = savedParkList[1];
-        // console.log(`Second Park is ${JSON.stringify(secondPark)}`)
-        // console.log(savedParkList);
         // If there is nothing in localStorage then set to empty array
         if (!savedParkList) {
             savedParkList = [];
@@ -182,6 +172,11 @@ saveButtonEl.addEventListener('click', function(event) {
         let stringedSavedPark1 = JSON.stringify(savedParkList);
 
         localStorage.setItem("savedPark1", stringedSavedPark1);
+
+        // grab the 2nd item in local storage array
+        let storedPark2 = JSON.stringify('savedPark1[1]');
+
+        console.log(storedPark2)
 
 }) 
 
