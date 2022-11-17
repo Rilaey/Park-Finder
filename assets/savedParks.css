@@ -19,6 +19,7 @@ a, .search-btn {
     padding-top: 5px;
   }
 
+    /* saved card */
   .grid-container .cell {
     border-right: solid 1px;
     padding: 8px;
@@ -28,7 +29,6 @@ a, .search-btn {
     border-right: 0px;
   }
 
-  /* saved card */
   .saved-cell {
     margin: 10px 0;
   }
