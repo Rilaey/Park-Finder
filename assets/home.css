@@ -1,18 +1,5 @@
 /* Featured Parks Cards */
 
-/* .cardFeatured {
-    padding: 5px;
-    margin: 5px;
-} */
-
-/* .suggested * {
-    margin: 0px;
-    padding: 0px;
-    font-family: sans-serif;
-    position:relative;
-    bottom: -1px;
-} */
-
 .logo {
     background: none;
     position: relative;
@@ -39,8 +26,6 @@
     margin: -180px;
     margin-top: 20px;
     margin-bottom: 20px;
-    /* margin-left: 10px;
-    margin-right:10px; */
 }
 .container{
     display: inline-flex;
