@@ -84,3 +84,14 @@ span{
   opacity: 0.8;
   content-visibility: visible;
 }
+
+.mapBtn {
+    padding: 5px;
+    margin: 5px;
+    font-size: 30px;
+}
+
+.map {
+    height: 1500px;
+    width: 100%;
+}

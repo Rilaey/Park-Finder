@@ -58,28 +58,46 @@
     <section class="suggested grid-x grid-margin-x">
 
         <div class="container">
-            <div class="card cell">
-                <img id="img1">
-                <div class="intro">
-                    <h1 id="featured1"></h1>
-                    <p class="description1"></p>
+
+            <div class="card cell" id="featuredBox1" onclick="mapLoad1()">
+
+                <div class="map" id="featureMap1">
+                
+                    <div id="featurePark1">
+                        <img id="img1">
+                        <div class="intro">
+                        <h1 id="featured1"></h1>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="card cell">
-                <img id="img2">
-                <div class="intro">
-                    <h1 id="featured2"></h1>
-                    <p class="description2"></p>
+            <div class="card cell" id="featuredBox2" onclick="mapLoad2()">
+
+                <div class="map" id="featureMap2">
+                
+                    <div id="featurePark2">
+                        <img id="img2">
+                        <div class="intro">
+                        <h1 id="featured2"></h1>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="card cell">
-                <img id="img3">
-                <div class="intro">
-                    <h1 id="featured3"></h1>
-                    <p class="description3"></p>
+
+            <div class="card cell" id="featuredBox3" onclick="mapLoad3()">
+
+                <div class="map" id="featureMap3">
+                
+                    <div id="featurePark3">
+                        <img id="img3">
+                        <div class="intro">
+                        <h1 id="featured3"></h1>
+                        </div>
+                    </div>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -101,6 +119,9 @@
         integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/js/foundation.min.js"
         crossorigin="anonymous"></script>
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOQradlhO76Z0l-Yorgij0RUAkMC6nMjc&callback=initMap">
+    </script>
     <script src="./assets/global.js"></script>
     <script src="./home.js"></script>
 </body>

@@ -190,3 +190,36 @@ function initMap() {
         title: 'Yellowstone National Park' //Marker shows Yellowstone park name on hover
     });
 }  
+
+var featuredPark1 = JSON.parse(localStorage.getItem("parkInfo1"));
+var featuredPark2 = JSON.parse(localStorage.getItem("parkInfo2"));
+var featuredPark3 = JSON.parse(localStorage.getItem("parkInfo3"));
+
+let featureBtn1 = document.getElementById('featureCard1');
+let featureBtn2 = document.getElementById('featureCard2');
+let featureBtn3 = document.getElementById('featureCard3');
+
+function featuredMap1() {
+  console.log('i was clicked!');
+  window.location.replace('./map.html');
+
+  // Set the park title, image, and description and show the result in the card
+    console.log('will this work' + featuredPark1.name);
+  $('#parkTitle').text(featuredPark1.name);
+  $('#parkImage').attr('src', featuredPark1.image);
+  $('#parkDescription').text(featuredPark1.description);
+  // Show the search results container
+  $('.search-results-container').removeClass('invisible');
+
+  const options = {
+    zoom: 8,
+    center: { lat: Number(featuredPark1.latitude), lng: Number(featuredPark1.longitude) }
+};
+//Map shows location of randomonly generated park and places marker 
+let map = new google.maps.Map(document.getElementById('map'), options);
+new google.maps.Marker({
+    position: { lat: Number(featuredPark1.latitude), lng: Number(featuredPark1.longitude) },
+    map: map,
+    title: featuredPark1.name //Marker shows fullname of park on hover over marker
+});
+}
