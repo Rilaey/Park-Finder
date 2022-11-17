@@ -136,45 +136,8 @@ $('#parkSearchForm').submit(function (event) {
     });
 });
 
-// values for save card 0
-let savedName0 = document.querySelector("#saved-name-zero");
-let savedImg0 = $('#saved-img-zero');
-let savedDesc0 = $('#saved-desc-zero');
-let savedLink0 = $('#saved-link-zero');
-let savedWeateher0 = $('#saved-weather-zero');
-let deleteBtn0 = $('#delete-btn-zero');
-// values for save card 1
-let savedName1 = $('#saved-name-one');
-let savedImg1 = $('#saved-img-one');
-let savedDesc1 = $('#saved-desc-one');
-let savedLink1 = $('#saved-link-one');
-let savedWeateher1 = $('#saved-weather-one');
-let deleteBtn1 = $('#delete-btn-one');
-// values for save card 2
-let savedName2 = $('#saved-name-two');
-let savedImg2 = $('#saved-img-two');
-let savedDesc2 = $('#saved-desc-two');
-let savedLink2 = $('#saved-link-two');
-let savedWeateher2 = $('#saved-weather-two');
-let deleteBtn2 = $('#delete-btn-two');
-// values for save card 3
-let savedName3 = $('#saved-name-three');
-let savedImg3 = $('#saved-img-three');
-let savedDesc3 = $('#saved-desc-three');
-let savedLink3 = $('#saved-link-three');
-let savedWeateher3 = $('#saved-weather-three');
-let deleteBtn3 = $('#delete-btn-three');
-// values for save card 4
-let savedName4 = $('#saved-name-four');
-let savedImg4 = $('#saved-img-four');
-let savedDesc4 = $('#saved-desc-four');
-let savedLink4 = $('#saved-link-four');
-let savedWeateher4 = $('#saved-weather-four');
-let deleteBtn4 = $('#delete-btn-four');
-
-
-// Getting the item from local storage and parsing it
-let savedParkList = JSON.parse(localStorage.getItem("savedPark1"));
+// // Getting the item from local storage and parsing it
+// let savedParkList = JSON.parse(localStorage.getItem("savedPark1"));
 
 let saveButtonEl = document.getElementById('save-btn');
 saveButtonEl.addEventListener('click', function(event) {

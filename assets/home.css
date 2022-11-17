@@ -1,22 +1,18 @@
-/*----Appplication description-----*/
-.app-description{
-    opacity: 1;
- }
+/* Featured Parks Cards */
 
-/*------featured parks------*/
-
-.cardFeatured {
+/* .cardFeatured {
     padding: 5px;
     margin: 5px;
-}
+} */
 
-.suggested * {
+/* .suggested * {
     margin: 0px;
     padding: 0px;
     font-family: sans-serif;
     position:relative;
     bottom: -1px;
-}
+} */
+
 .logo {
     background: none;
     position: relative;
@@ -41,13 +37,17 @@
     align-items: center;
     background: #0D0D0D;
     margin: -180px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    /* margin-left: 10px;
+    margin-right:10px; */
 }
 .container{
     display: inline-flex;
 }
 .card{
     height: 395px;
-    margin: 100px; 
+    margin: 100px 50px; 
     width: 375px;
     box-shadow: 5px 5px 20px black;
     overflow:hidden;
@@ -63,11 +63,11 @@ img{
 }
 .intro {
     height: 300px;
-    width:400px;
+    width: 375px;
     padding: 5px;
     box-sizing:border-box;
     position:absolute;
-    bottom: -170px;
+    bottom: -370px;
     background: rgb(27, 27, 27, .5);
     color: white;
     transition: .5s;
@@ -92,7 +92,7 @@ span{
 }
 .card:hover .intro {
   height:220px;
-  bottom: 240px;
+  bottom: -195px;
   background: black;
 }
 .card:hover p{
