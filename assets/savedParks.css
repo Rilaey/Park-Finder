@@ -32,3 +32,25 @@ a, .search-btn {
   .saved-cell {
     margin: 10px 0;
   }
+
+  .delete-btn {
+    background-color: black;
+    color: red;
+    width: 178px;
+    height: 35px;
+    margin: 10px 0;
+    font-size: 18px;
+    visibility: hidden;
+  }
+
+  .font {
+    font-size: 22px;
+  }
+
+  h2 {
+    border-bottom: 4px solid black;
+  }
+
+  .card-save {
+    background-color: #e6e6e6
+  }
