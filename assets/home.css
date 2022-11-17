@@ -47,12 +47,12 @@ img{
 
 }
 .intro {
-    height: 300px;
+    height: 100px;
     width: 375px;
     padding: 5px;
     box-sizing:border-box;
     position:absolute;
-    bottom: -370px;
+    bottom: -270px;
     background: rgb(27, 27, 27, .5);
     color: white;
     transition: .5s;
@@ -83,4 +83,15 @@ span{
 .card:hover p{
   opacity: 0.8;
   content-visibility: visible;
+}
+
+.mapBtn {
+    padding: 5px;
+    margin: 5px;
+    font-size: 30px;
+}
+
+.map {
+    height: 1500px;
+    width: 100%;
 }

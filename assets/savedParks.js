@@ -1,3 +1,9 @@
+// $(document).ready(function() {
+//     let savedParks = localStorage.getItem(JSON.parse('savedParkList'))
+
+//     console.log(savedParks);
+// })
+
 // values for save card 0
 let savedName0 = document.querySelector("#saved-name-zero");
 let savedImg0 = document.querySelector("#saved-img-zero");
