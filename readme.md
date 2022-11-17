@@ -10,7 +10,7 @@
 
 ## Usage
 
-- Link to deployed application
+- Link to deployed application https://rilaey.github.io/Park-Finder/
 
 ![Screenshot of Application](xxxxxxxxx)
 
