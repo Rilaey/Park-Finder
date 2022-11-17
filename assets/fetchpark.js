@@ -121,13 +121,6 @@ $('#parkSearchForm').submit(function (event) {
         // Show the search results container
         $('.search-results-container').removeClass('invisible');
 
-        // save button functions with local storage
-
-        
-        // empty array for fav parks to be pushed to
-
-        let favParksArr = [];
-
         // Default options for map loading random park location
         const options = {
             zoom: 8,
@@ -148,7 +141,7 @@ $('#parkSearchForm').submit(function (event) {
 
 let saveButtonEl = document.getElementById('save-btn');
 saveButtonEl.addEventListener('click', function(event) {
-    console.log('I was clicked!')
+    //console.log('I was clicked!')
     event.preventDefault();
         let savedPark1 = {
             parkTitle: randomPark.fullName , 
@@ -174,10 +167,12 @@ saveButtonEl.addEventListener('click', function(event) {
         localStorage.setItem("savedPark1", stringedSavedPark1);
 
         // grab the 2nd item in local storage array
-        let storedPark2 = JSON.stringify('savedPark1[1]');
+        // let storedPark2 = JSON.stringify(savedParkList[1]);
 
-        console.log(storedPark2)
-
+        // if(savedParkList + 1) {
+        //     let newSavedPark = savedParkList
+        // }
+            
 }) 
 
 // Sets yellowstone location as default when page loads
