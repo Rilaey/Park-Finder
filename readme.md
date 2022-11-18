@@ -12,7 +12,7 @@
 
 - Link to deployed application https://rilaey.github.io/Park-Finder/
 
-![Screenshot of Application](xxxxxxxxx)
+![Screenshot of Application](./assets/images/park-finder-screen-recording.gif)
 
 ## Credits 
 
